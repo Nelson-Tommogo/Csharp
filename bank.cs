@@ -5,10 +5,6 @@ public class BankAccount
 {
     public string AccountNumber { get; set; }
     public decimal Balance { get; set; }
-    public virtual void DisplayInfo()
-    {
-        Console.WriteLine($"Account Number: {AccountNumber}, Balance: {Balance:C}");
-    }
 
     public virtual void Deposit(decimal amount)
     {
@@ -28,48 +24,28 @@ public class BankAccount
             Console.WriteLine("Insufficient balance");
         }
     }
+
+    public virtual void DisplayBalance()
+    {
+        Console.WriteLine($"Account Number: {AccountNumber}, Balance: {Balance:C}");
+    }
 }
 
 // Derived class representing a savings account
 public class SavingsAccount : BankAccount
 {
-    public double InterestRate { get; set; }
-    public override void DisplayInfo()
+    public override void DisplayBalance()
     {
-        base.DisplayInfo();
-        Console.WriteLine($"Interest Rate: {InterestRate}%");
-    }
-
-    public override void Deposit(decimal amount)
-    {
-        // Additional logic for savings account deposits (e.g., apply interest)
-        base.Deposit(amount);
-        Console.WriteLine("Interest applied.");
+        Console.WriteLine($"Account Number: {AccountNumber}, Balance (Savings): {Balance:C}");
     }
 }
 
 // Derived class representing a checking account
 public class CheckingAccount : BankAccount
 {
-    public decimal OverdraftLimit { get; set; }
-    public override void DisplayInfo()
+    public override void DisplayBalance()
     {
-        base.DisplayInfo();
-        Console.WriteLine($"Overdraft Limit: {OverdraftLimit:C}");
-    }
-
-    public override void Withdraw(decimal amount)
-    {
-        // Additional logic for checking account withdrawals (e.g., check overdraft limit)
-        if (amount <= Balance + OverdraftLimit)
-        {
-            base.Withdraw(amount);
-            Console.WriteLine("Withdrawal successful.");
-        }
-        else
-        {
-            Console.WriteLine("Exceeded overdraft limit");
-        }
+        Console.WriteLine($"Account Number: {AccountNumber}, Balance (Checking): {Balance:C}");
     }
 }
 
@@ -101,22 +77,28 @@ class Program
         SavingsAccount savingsAccount = new SavingsAccount();
         savingsAccount.AccountNumber = accountNumber;
         savingsAccount.Balance = balance;
-        savingsAccount.InterestRate = interestRate;
 
         CheckingAccount checkingAccount = new CheckingAccount();
         checkingAccount.AccountNumber = accountNumber;
         checkingAccount.Balance = balance;
-        checkingAccount.OverdraftLimit = overdraftLimit;
 
-        // Display account information
-        Console.WriteLine("\nAccount Information:");
-        Console.WriteLine("====================");
+        // Perform deposit and withdrawal
+        Console.Write("Enter the amount to deposit: ");
+        decimal depositAmount = Convert.ToDecimal(Console.ReadLine());
+        account.Deposit(depositAmount);
+
+        Console.Write("Enter the amount to withdraw: ");
+        decimal withdrawalAmount = Convert.ToDecimal(Console.ReadLine());
+        account.Withdraw(withdrawalAmount);
+
+        // Calculate and display balance
+        Console.WriteLine("\nAccount Balances:");
+        Console.WriteLine("=================");
         Console.WriteLine($"Name: {name}");
-        account.DisplayInfo();
-        savingsAccount.DisplayInfo();
-        checkingAccount.DisplayInfo();
+        account.DisplayBalance();
+        savingsAccount.DisplayBalance();
+        checkingAccount.DisplayBalance();
 
         Console.WriteLine($"Dear {name}, thank you for using the Banking System.");
     }
 }
- 
