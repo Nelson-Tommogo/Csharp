@@ -21,7 +21,7 @@ class Student : Person
 
     public virtual void CalculateGrade()
     {
-        Console.WriteLine($"Calculating grade for {Name}");
+        Console.WriteLine($"grade for {Name}");
     }
 }
 
@@ -30,7 +30,7 @@ class HighSchoolStudent : Student
 {
     public override void CalculateGrade()
     {
-        Console.WriteLine($"Calculating grade for {Name} as a high school student");
+        Console.WriteLine($"grade for {Name} as a high school student");
         // Perform high school student grade calculation logic
     }
 }
@@ -40,7 +40,7 @@ class CollegeStudent : Student
 {
     public override void CalculateGrade()
     {
-        Console.WriteLine($"Calculating grade for {Name} as a college student");
+        Console.WriteLine($"Grade for {Name} as a college student");
         // Perform college student grade calculation logic
     }
 }
