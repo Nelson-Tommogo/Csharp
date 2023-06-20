@@ -81,28 +81,42 @@ class Program
         Console.Write("Enter your name: ");
         string name = Console.ReadLine();
 
+        Console.Write("Enter your account number: ");
+        string accountNumber = Console.ReadLine();
+
+        Console.Write("Enter your balance: ");
+        decimal balance = Convert.ToDecimal(Console.ReadLine());
+
+        Console.Write("Enter your interest rate (for savings account): ");
+        double interestRate = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Enter your overdraft limit (for checking account): ");
+        decimal overdraftLimit = Convert.ToDecimal(Console.ReadLine());
+
         // Object creation - Creating instances of classes
-        BankAccount account = new BankAccount(); // Object creation
-        account.AccountNumber = "123456";
-        account.Balance = 1000;
+        BankAccount account = new BankAccount();
+        account.AccountNumber = accountNumber;
+        account.Balance = balance;
+
+        SavingsAccount savingsAccount = new SavingsAccount();
+        savingsAccount.AccountNumber = accountNumber;
+        savingsAccount.Balance = balance;
+        savingsAccount.InterestRate = interestRate;
+
+        CheckingAccount checkingAccount = new CheckingAccount();
+        checkingAccount.AccountNumber = accountNumber;
+        checkingAccount.Balance = balance;
+        checkingAccount.OverdraftLimit = overdraftLimit;
+
+        // Display account information
+        Console.WriteLine("\nAccount Information:");
+        Console.WriteLine("====================");
+        Console.WriteLine($"Name: {name}");
         account.DisplayInfo();
-
-        SavingsAccount savingsAccount = new SavingsAccount(); // Object creation
-        savingsAccount.AccountNumber = "789012";
-        savingsAccount.Balance = 5000;
-        savingsAccount.InterestRate = 2.5;
         savingsAccount.DisplayInfo();
-        savingsAccount.Deposit(100);
-        savingsAccount.DisplayInfo();
-
-        CheckingAccount checkingAccount = new CheckingAccount(); // Object creation
-        checkingAccount.AccountNumber = "345678";
-        checkingAccount.Balance = 2000;
-        checkingAccount.OverdraftLimit = 500;
-        checkingAccount.DisplayInfo();
-        checkingAccount.Withdraw(3000);
         checkingAccount.DisplayInfo();
 
         Console.WriteLine($"Dear {name}, thank you for using the Banking System.");
     }
 }
+ 
