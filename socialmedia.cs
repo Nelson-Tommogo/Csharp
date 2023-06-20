@@ -47,8 +47,8 @@ class Program
     {
         // Object creation - Creating instances of classes
         RegularUser regularUser = new RegularUser();
-        regularUser.Username = "JohnDoe";
-        regularUser.Posts = new List<string> { "Hey!", "I love coding!" };
+        regularUser.Username = "Common";
+        regularUser.Posts = new List<string> { "Let's Go C# ", "Flutter!!" };
         regularUser.DisplayProfile();
 
         InfluencerUser influencerUser = new InfluencerUser();
