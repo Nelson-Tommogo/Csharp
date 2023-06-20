@@ -1,5 +1,4 @@
 using System;
-using Aspose.Drawing;
 using System.Drawing;
 
 namespace ShapeDrawingSystem
