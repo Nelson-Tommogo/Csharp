@@ -43,7 +43,7 @@ class Program
     static void InsertBook(MySqlConnection connection, string author, double price, string title, int bookNumber, int numCopies)
     {
         string query = "INSERT INTO books (author, price, title, book_number, num_copies) " +
-                       "VALUES (@Author, @Price, @Title, @BookNumber, @NumCopies)";
+                       "VALUES (@JohnSmith, @39.99, @C# Programming: From Beginner to Pro, @2001, @10)";
 
         MySqlCommand command = new MySqlCommand(query, connection);
 
