@@ -48,11 +48,11 @@ int main() {
 
     // Establish connection to the MySQL database
     driver = sql::mysql::get_mysql_driver_instance();
-    con = driver->connect("tcp://127.0.0.1:3306", "your_username", "your_password");
-    con->setSchema("your_database_name");
+    con = driver->connect("tcp://127.0.0.1:3306", "root", "genius");
+    con->setSchema("Voterdb");
 
     // Add a new voter
-    Voter newVoter("V12345", "1234567890", "John", "Doe", "Smith", "Polling Station A", "01-01-1990", "Male");
+    Voter newVoter("V12345", "1234567890", "common", "genius", "nelson", "Polling Station A", "01-01-1990", "Male");
 
     // Save the voter details to the database
     sql::Statement *stmt = con->createStatement();
