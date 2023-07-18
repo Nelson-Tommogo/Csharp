@@ -15,7 +15,7 @@ namespace Func
 
             Console.WriteLine("Press Enter to Enter Details or any other key to quit");
 
-            for (int i = 1; i <= 9; i++)
+            for (int i = 1; i <= 3; i++)
             {
                 Console.WriteLine($"Enter Marks of Unit{i}");
                 int marks = int.Parse(Console.ReadLine());
