@@ -37,10 +37,10 @@ namespace Func
             int Unit8 = int.Parse(Console.ReadLine());
             Console.WriteLine("Enter Marks of Unit8");
 
+            
             int unit9 = int.Parse(Console.ReadLine());
             Console.WriteLine("Enter Marks of Unit9");
 
-            Console.WriteLine("Calculations Begin Here");
 
             Double total = unit1 + unit2 + unit3 + Unit4 + Unit5 + Unit6 + unit7 + Unit8 + unit9;
             Double Average = total / 9;
