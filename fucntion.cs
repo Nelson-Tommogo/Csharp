@@ -44,8 +44,9 @@ namespace Func
 
             Double total = unit1 + unit2 + unit3 + Unit4 + Unit5 + Unit6 + unit7 + Unit8 + unit9;
             Double Average = total / 9;
+            Double GPA =Average/2;
 
-            Console.WriteLine($"Total Marks: {total}, Average: {Average}");
+            Console.WriteLine($"Total Marks: {total}, Average: {Average}, GPA: {GPA}");
         }
 
         public static void Main()
