@@ -1,11 +1,11 @@
 using System;
-namespace explicit{
+namespace typecastexplicit{
     public class Explicit{
         public static void Main(){
-            double AdvancedApp = 89.999;
-            int AppProgarmming = AdvancedApp;
-            Console.WriteLine(AdvancedApp);
-            Console.WriteLine(AppProgarmming);
+            double AdvancedAppli = 89.99999999999999999999999999;
+            int AppliProgramming = (int) AdvancedAppli;
+            Console.WriteLine(AdvancedAppli);
+            Console.WriteLine(AppliProgramming);
         }
     }
 }
