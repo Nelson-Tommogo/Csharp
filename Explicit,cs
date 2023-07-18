@@ -2,6 +2,8 @@ using System;
 namespace explicit{
     public class Explicit{
         public static void Main(){
+            double AdvancedApp = 89.999;
+            int AppProgarmming = AdvancedApp;
             
         }
     }
