@@ -4,7 +4,8 @@ namespace explicit{
         public static void Main(){
             double AdvancedApp = 89.999;
             int AppProgarmming = AdvancedApp;
-            
+            Console.WriteLine(AdvancedApp);
+            Console.WriteLine(AppProgarmming);
         }
     }
 }
