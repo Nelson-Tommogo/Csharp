@@ -62,6 +62,14 @@ namespace Func
              else if(Average<=74 && Average>= 66){
             Console.WriteLine("B+");
             }
+             else if(Average<=79 && Average>= 75){
+            Console.WriteLine("A-");
+            }
+             else if(Average<=99 && Average>= 80){
+            Console.WriteLine("A");
+            }
+            else
+            Console.WriteLine("Invalid value..Not Allowed");
 
             Console.WriteLine($"Total Marks: {total}, Average: {Average}, GPA: {GPA}, grade:{grade}");
         }
