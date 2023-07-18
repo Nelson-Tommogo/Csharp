@@ -1,0 +1,8 @@
+using System;
+namespace explicit{
+    public class Explicit{
+        public static void Main(){
+            
+        }
+    }
+}
