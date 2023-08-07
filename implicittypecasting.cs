@@ -9,3 +9,4 @@ namespace typecasting{
         }
     }
 }
+//widening conversion, is an automatic conversion performed by the C# compiler when it can safely convert one data type to another without any data loss or risk of precision loss
