@@ -9,3 +9,4 @@ namespace typecastexplicit{
         }
     }
 }
+//narrowing conversion, is a conversion that requires an explicit instruction from the programmer.
